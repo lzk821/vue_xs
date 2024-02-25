@@ -4,10 +4,16 @@
 
 <template>
   <RouterView></RouterView>
+  <div class="test">
+    test scss
+  </div>
   <el-button type="primary">Primary</el-button>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.test{
+  color:$sucColor;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
