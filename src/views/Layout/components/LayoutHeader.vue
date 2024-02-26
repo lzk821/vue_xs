@@ -11,7 +11,7 @@ const categoryStore = usecategoryStore()
       </h1>
       <ul class="app-header-nav">
         <li class="home" v-for="c in categoryStore.getCategoryList" :key="c.id">
-          <RouterLink :to="`/category/${c.id}`">{{c.name}}</RouterLink>
+          <RouterLink active-class="active" :to="`/category/${c.id}`">{{c.name}}</RouterLink>
         </li>
       </ul>
       <div class="search">
