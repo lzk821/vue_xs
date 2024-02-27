@@ -1,30 +1,9 @@
 <script setup>
-import { getmbxAPI } from '@/apis/category';
-import { onMounted, ref } from 'vue'
-import { onBeforeRouteUpdate, useRoute } from 'vue-router'
-import { getBannerAPI } from '@/apis/home'
 import  GoodsItem  from '@/views/Home/components/GoodsItem.vue'
-const bannerList = ref([])
-const getBanner = async () => {
-  const res = await getBannerAPI(
-    { distributionSite: '2' })
-  console.log(res)
-  bannerList.value = res.result
-}
-onMounted(() => {
-  getBanner()
-})
-const router = useRoute()
-const categoryData = ref({})
-const getCategory = async (id=router.params.id) => {
-  const res = await getmbxAPI(id)
-  categoryData.value = res.result
-}
-onMounted(() => getCategory())
-// 路由缓存解决
-onBeforeRouteUpdate((to)=>{
-  getCategory(to.params.id)
-})
+import {useBanner} from './components/useBanner'
+const {bannerList}=useBanner()
+import {useCategory} from './components/useCategory'
+const {categoryData}= useCategory()
 </script>
 
 <template>
