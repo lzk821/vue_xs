@@ -15,6 +15,8 @@ onMounted(()=>{
   <LayoutFixed/>
   <LayoutNav />
   <LayoutHeader />
+  <!-- key方法解决路由缓存 -->
+  <!-- <RouterView :key="$route.fullPath"/> -->
   <RouterView />
   <LayoutFooter />
 </template>

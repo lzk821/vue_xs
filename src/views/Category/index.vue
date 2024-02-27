@@ -1,7 +1,7 @@
 <script setup>
 import { getmbxAPI } from '@/apis/category';
 import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { getBannerAPI } from '@/apis/home'
 import  GoodsItem  from '@/views/Home/components/GoodsItem.vue'
 const bannerList = ref([])
@@ -16,11 +16,15 @@ onMounted(() => {
 })
 const router = useRoute()
 const categoryData = ref({})
-const getCategory = async () => {
-  const res = await getmbxAPI(router.params.id)
+const getCategory = async (id=router.params.id) => {
+  const res = await getmbxAPI(id)
   categoryData.value = res.result
 }
 onMounted(() => getCategory())
+// 路由缓存解决
+onBeforeRouteUpdate((to)=>{
+  getCategory(to.params.id)
+})
 </script>
 
 <template>
