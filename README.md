@@ -13,7 +13,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+关于前端销售系统的实现
 ```
 
 ### Compile and Hot-Reload for Development
