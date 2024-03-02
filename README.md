@@ -19,7 +19,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+实现的方法
 ```
 
 ### Compile and Minify for Production
