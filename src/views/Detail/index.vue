@@ -2,10 +2,9 @@
 import { onMounted } from 'vue';
 import { GetDetail } from '@/apis/detail'
 import {ref} from 'vue'
-import ImageView from '@/components/ImageView/index.vue'
 import {useRoute} from 'vue-router'
 import DetailHot from './components/DetailHot.vue'
-import shopSku from '@/components/shopSku/index.vue'
+
 
 const goods =ref({})
 const route = useRoute()
@@ -34,7 +33,7 @@ const skuChange = (sku)=>{
           </el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: `/category/sub/${goods.categories[0].id}` }">{{goods.categories[0].name}}
           </el-breadcrumb-item>
-          <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
+          <el-breadcrumb-item>{{goods.name}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <!-- 商品信息 -->
@@ -43,7 +42,7 @@ const skuChange = (sku)=>{
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <ImageView :image-list="goods.mainPictures"></ImageView>
+              <shopImageView :image-list="goods.mainPictures"/>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
