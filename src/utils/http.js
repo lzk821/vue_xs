@@ -14,7 +14,7 @@ httpInstance.interceptors.request.use(config => {
   const userStore = useUserStore()
   const token =userStore.userInfo.token
   if(token) {
-    config.headers.Authorization = `Bear ${token}`
+    config.headers.Authorization = `Bearer ${token}`
   }
     return config
   }, e => Promise.reject(e))
@@ -29,7 +29,7 @@ httpInstance.interceptors.request.use(config => {
     if(e.response.status === 401){
       userStore.clearUserInfo()
       router.push('/login')
-    }  
+    }
     return Promise.reject(e)
   })
 
