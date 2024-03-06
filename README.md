@@ -25,7 +25,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ### Compile and Minify for Production
 
 ```sh
-npm run build
+相关技术
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
