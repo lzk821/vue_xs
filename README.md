@@ -19,7 +19,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ### Compile and Hot-Reload for Development
 
 ```sh
-实现的方法
+实现的方法:vue3 实现
 ```
 
 ### Compile and Minify for Production
