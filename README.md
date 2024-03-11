@@ -31,5 +31,5 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-start...
+start.....
 ```
